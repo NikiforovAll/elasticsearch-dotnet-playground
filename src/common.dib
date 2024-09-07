@@ -1,0 +1,25 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!csharp
+
+#r "nuget: NEST"
+#r "nuget: Elastic.Clients.Elasticsearch"
+#r "nuget: Testcontainers.Elasticsearch"
+#r "nuget: XUnit"
+#r "nuget: Bogus"
+#r "nuget: Microsoft.Data.Analysis"
+
+#!csharp
+
+#!import ./Utils.cs
+
+public class BlogPost
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public string Author { get; set; }
+    public DateTime CreatedAt { get; set; }
+}
