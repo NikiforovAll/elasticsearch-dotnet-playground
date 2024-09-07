@@ -4,7 +4,7 @@ This playground is a collection of notebooks that demonstrate how to use Elastic
 
 You may want to use this playground to learn more about Elasticsearch.NET and NEST clients or if you want to migration your existing code from NEST to Elasticsearch.NET.
 
-> See [playground.dib](./playground.dib) to get started.
+> See [playground.ipynb](./playground.ipynb) to get started.
 
 ![setup-elastic-infra](./assets/setup-elastic-infra.png)
 
