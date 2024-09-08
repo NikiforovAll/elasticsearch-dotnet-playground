@@ -8,6 +8,10 @@ You may want to use this playground to learn more about Elasticsearch.NET and NE
 
 ![setup-elastic-infra](./assets/setup-elastic-infra.png)
 
+## Configure
+
+To configure the playground, set the `PLAYGROUND_CONNECTION_STRING=https://elastic:elastic@127.0.0.1:9200/` in .env file in the root of the project. If you don't do it, you will be prompted to enter the connection string every time you set up the client
+
 
 ## References
 

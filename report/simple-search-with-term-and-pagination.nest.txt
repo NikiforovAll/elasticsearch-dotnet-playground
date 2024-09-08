@@ -12,7 +12,7 @@ Request:
 }
 Response:
 {
-  "took": 5,
+  "took": 12,
   "timed_out": false,
   "_shards": {
     "total": 1,

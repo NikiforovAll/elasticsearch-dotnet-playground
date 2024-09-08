@@ -10,6 +10,8 @@
 #r "nuget: XUnit"
 #r "nuget: Bogus"
 #r "nuget: Microsoft.Data.Analysis"
+#r "nuget: dotenv.net"
+#r "nuget: System.Linq.Async"
 
 #!csharp
 

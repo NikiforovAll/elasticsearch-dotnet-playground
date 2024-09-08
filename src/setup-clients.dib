@@ -10,8 +10,15 @@ using Nest;
 using Elastic.Transport;
 using Elastic.Clients.Elasticsearch;
 using Elastic.Transport.Products.Elasticsearch;
+using dotenv.net;
 
-var connectionStringInput = await Microsoft.DotNet.Interactive.Kernel.GetInputAsync("Please provide a connection string.");
+var variables = DotEnv.Read(new DotEnvOptions(envFilePaths: new[] {"../.env"}));
+
+if (!variables.TryGetValue("PLAYGROUND_CONNECTION_STRING", out var connectionStringInput)
+    || string.IsNullOrEmpty(connectionStringInput))
+{
+    connectionStringInput = await Microsoft.DotNet.Interactive.Kernel.GetInputAsync("Please provide a connection string.");
+}
 
 var connectionString = new Uri(connectionStringInput);
 var nestClientSettings = new ConnectionSettings(connectionString)
