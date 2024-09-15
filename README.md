@@ -26,7 +26,7 @@ jupyter kernelspec list
 
 Enter the notebooks folder, and run this to launch the browser interface:
 
-```
+```bash
 jupyter-lab
 ```
 
