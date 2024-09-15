@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "microsoft.dotnet-interactive": {
+      "version": "1.0.522904",
+      "commands": [
+        "dotnet-interactive"
+      ],
+      "rollForward": false
+    }
+  }
+}

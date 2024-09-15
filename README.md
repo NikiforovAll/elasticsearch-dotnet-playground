@@ -12,6 +12,23 @@ You may want to use this playground to learn more about Elasticsearch.NET and NE
 
 To configure the playground, set the `PLAYGROUND_CONNECTION_STRING=https://elastic:elastic@127.0.0.1:9200/` in .env file in the root of the project. If you don't do it, you will be prompted to enter the connection string every time you set up the client
 
+## Devcontainer
+
+You can use the devcontainer to get started with the playground. It will install the required tools and libraries.
+
+> See [.devcontainer/devcontainer.json](./.devcontainer/devcontainer.json) to get started.
+
+This command will confirm that Jupyter now supports C# notebooks:
+
+```bash
+jupyter kernelspec list
+```
+
+Enter the notebooks folder, and run this to launch the browser interface:
+
+```
+jupyter-lab
+```
 
 ## References
 
