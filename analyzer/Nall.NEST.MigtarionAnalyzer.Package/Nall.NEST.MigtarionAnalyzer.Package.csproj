@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Nall.NEST.MigtarionAnalyzer</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Oleksii_Nikiforov</Authors>
+    <PackageLicenseUrl>https://github.com/NikiforovAll/elasticsearch-dotnet-playground/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/NikiforovAll/elasticsearch-dotnet-playground</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/NikiforovAll/elasticsearch-dotnet-playground</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description></Description>
+    <PackageReleaseNotes>This package helps with migration from Nest to Elastic.Clients.Elasticsearch</PackageReleaseNotes>
+    <Copyright>Copyright</Copyright>
+    <PackageTags>analyzers</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nall.NEST.MigtarionAnalyzer.CodeFixes\Nall.NEST.MigtarionAnalyzer.CodeFixes.csproj" />
+    <ProjectReference Include="..\Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\Nall.NEST.MigtarionAnalyzer.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\Nall.NEST.MigtarionAnalyzer.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
+
+</Project>

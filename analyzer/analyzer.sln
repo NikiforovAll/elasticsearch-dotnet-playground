@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer", "Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.csproj", "{5B3F3DB1-20B9-4834-83CC-17334839193B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer.CodeFixes", "Nall.NEST.MigtarionAnalyzer.CodeFixes\Nall.NEST.MigtarionAnalyzer.CodeFixes.csproj", "{480B9220-B0B2-4517-9980-F2C1B19B099C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer.Package", "Nall.NEST.MigtarionAnalyzer.Package\Nall.NEST.MigtarionAnalyzer.Package.csproj", "{2F963F87-9C92-4C23-8802-B5584B565E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer.Test", "Nall.NEST.MigtarionAnalyzer.Test\Nall.NEST.MigtarionAnalyzer.Test.csproj", "{C4F70E21-C467-49CA-93A9-4FE0DEFC6F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer.Vsix", "Nall.NEST.MigtarionAnalyzer.Vsix\Nall.NEST.MigtarionAnalyzer.Vsix.csproj", "{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B3F3DB1-20B9-4834-83CC-17334839193B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3F3DB1-20B9-4834-83CC-17334839193B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3F3DB1-20B9-4834-83CC-17334839193B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3F3DB1-20B9-4834-83CC-17334839193B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480B9220-B0B2-4517-9980-F2C1B19B099C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480B9220-B0B2-4517-9980-F2C1B19B099C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480B9220-B0B2-4517-9980-F2C1B19B099C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480B9220-B0B2-4517-9980-F2C1B19B099C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F963F87-9C92-4C23-8802-B5584B565E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F963F87-9C92-4C23-8802-B5584B565E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F963F87-9C92-4C23-8802-B5584B565E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F963F87-9C92-4C23-8802-B5584B565E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F70E21-C467-49CA-93A9-4FE0DEFC6F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F70E21-C467-49CA-93A9-4FE0DEFC6F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F70E21-C467-49CA-93A9-4FE0DEFC6F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F70E21-C467-49CA-93A9-4FE0DEFC6F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

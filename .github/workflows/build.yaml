@@ -1,0 +1,67 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+  workflow_dispatch:
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      
+jobs:
+  build:
+    if: github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
+    name: Build 
+    runs-on: windows-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+      DOTNET_NOLOGO: true
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+      DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+      DOTNET_MULTILEVEL_LOOKUP: 0
+      PACKAGE_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.Package\
+      VSIX_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.Vsix\
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Add GPR Source
+      run: nuget sources Add -Name "GPR" -Source ${{ secrets.GPR_URI }} -UserName ${{ secrets.GPR_USERNAME }} -Password ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build NuGet Package
+      run: |
+        msbuild /restore ${{ env.PACKAGE_PROJECT }} /p:Configuration=Release /p:PackageOutputPath=${{ github.workspace }}\artifacts
+
+    - name: Build VSIX Package
+      run: |
+        msbuild /restore ${{ env.VSIX_PROJECT }} /p:Configuration=Release /p:OutDir=${{ github.workspace }}\artifacts
+
+    - name: Push to GitHub Packages
+      run: nuget push ${{ github.workspace }}\artifacts\*.nupkg -Source "GPR"
+
+    # upload artifacts
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-pacakges
+        path: |
+            ${{ github.workspace }}\artifacts\**\*.vsix
+            ${{ github.workspace }}\artifacts\**\*.nupkg
