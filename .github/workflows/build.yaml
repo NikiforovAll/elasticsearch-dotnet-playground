@@ -55,7 +55,7 @@ jobs:
 
     # upload artifacts
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.2.1
       with:
         name: release-pacakges
         path: |
