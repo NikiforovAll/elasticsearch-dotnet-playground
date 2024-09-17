@@ -9,10 +9,6 @@ on:
       - '**/*.gitignore'
       - '**/*.gitattributes'
   workflow_dispatch:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.gitignore'
-      - '**/*.gitattributes'
       
 jobs:
   build:
@@ -30,10 +26,10 @@ jobs:
       VSIX_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.Vsix\
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4.1.7
       
     - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4.0.1
       with:
         dotnet-version: 5.0.x
 
@@ -41,7 +37,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
+      uses: NuGet/setup-nuget@v2.0.0
 
     - name: Add GPR Source
       run: nuget sources Add -Name "GPR" -Source ${{ secrets.GPR_URI }} -UserName ${{ secrets.GPR_USERNAME }} -Password ${{ secrets.GITHUB_TOKEN }}
