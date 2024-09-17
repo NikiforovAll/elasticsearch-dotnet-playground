@@ -6,7 +6,7 @@ Request:
 }
 Response:
 {
-  "took": 11,
+  "took": 12,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -16,140 +16,10 @@ Response:
   },
   "hits": {
     "total": {
-      "value": 1000,
+      "value": 0,
       "relation": "eq"
     },
-    "max_score": 1.0,
-    "hits": [
-      {
-        "_index": "posts",
-        "_id": "2130901761",
-        "_score": 1.0,
-        "_source": {
-          "id": 2130901761,
-          "title": "Handmade Soft Fish",
-          "description": "Voluptatem adipisci et. Dolores consectetur praesentium beatae nulla similique aliquam consequatur earum nesciunt. Dolor alias facere.",
-          "author": "Louvenia Pfannerstill",
-          "createdAt": "2023-10-15T06:43:07.3390985\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "1633176284",
-        "_score": 1.0,
-        "_source": {
-          "id": 1633176284,
-          "title": "Generic Fresh Cheese",
-          "description": "Explicabo sint quia voluptate quibusdam recusandae necessitatibus. Consectetur possimus fugit sit eum neque. Cumque sequi aut unde qui sapiente.",
-          "author": "Branson Robel",
-          "createdAt": "2024-08-18T14:22:53.4031265\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "1182173336",
-        "_score": 1.0,
-        "_source": {
-          "id": 1182173336,
-          "title": "Ergonomic Rubber Car",
-          "description": "Id sed accusamus. Non ea pariatur non aut enim provident officia dolore rerum. Ullam id ipsa odio odio voluptas.",
-          "author": "Courtney Friesen",
-          "createdAt": "2024-01-21T07:16:17.1361880\u002B02:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "37320302",
-        "_score": 1.0,
-        "_ignored": [
-          "description.keyword"
-        ],
-        "_source": {
-          "id": 37320302,
-          "title": "Rustic Plastic Table",
-          "description": "Odio nesciunt cumque autem et. Dolor unde laboriosam nemo et sed omnis. Ut dolores esse est veritatis vel. Laborum deserunt numquam cupiditate accusamus labore sit. Non ut omnis adipisci aut explicabo molestiae perspiciatis voluptatem. Repellendus natus quos aut dolores eaque.",
-          "author": "Margret Predovic",
-          "createdAt": "2024-06-26T04:20:04.6252645\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "618646271",
-        "_score": 1.0,
-        "_source": {
-          "id": 618646271,
-          "title": "Handmade Metal Pants",
-          "description": "Dolorem error atque at velit minima nesciunt quibusdam. Voluptas accusantium nisi ut. Fugit hic voluptatem voluptatem ad. Sunt excepturi praesentium quia pariatur ipsum aperiam mollitia architecto.",
-          "author": "Jaycee Tillman",
-          "createdAt": "2024-04-13T16:25:15.8877490\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "255381594",
-        "_score": 1.0,
-        "_source": {
-          "id": 255381594,
-          "title": "Gorgeous Fresh Car",
-          "description": "Molestias in optio aut. Perferendis sit nesciunt et enim. Culpa qui explicabo est qui enim odit nemo. Doloremque et natus.",
-          "author": "Misael Oberbrunner",
-          "createdAt": "2023-10-21T21:31:15.5473253\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "1741679453",
-        "_score": 1.0,
-        "_ignored": [
-          "description.keyword"
-        ],
-        "_source": {
-          "id": 1741679453,
-          "title": "Intelligent Steel Ball",
-          "description": "Architecto assumenda nihil qui sed sunt neque sint. Dolorem quis nisi. Corrupti nemo voluptatem facere a possimus facere velit nesciunt ut. Aut voluptas corrupti reprehenderit facere tenetur et veritatis quo. Quia voluptas amet consectetur est sit ratione atque sit. Ad vel maxime.",
-          "author": "Godfrey Haley",
-          "createdAt": "2024-04-04T21:47:07.1818620\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "592619733",
-        "_score": 1.0,
-        "_ignored": [
-          "description.keyword"
-        ],
-        "_source": {
-          "id": 592619733,
-          "title": "Sleek Wooden Gloves",
-          "description": "Qui quam quia animi assumenda voluptas inventore. Modi quas inventore dolorem reiciendis. Error sit id est molestiae eos consectetur natus mollitia qui. Beatae quia molestias. Similique nihil excepturi ea eum animi assumenda error. Autem porro a impedit ab officiis.",
-          "author": "Mary Fay",
-          "createdAt": "2024-05-09T00:12:11.8768241\u002B03:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "1569779976",
-        "_score": 1.0,
-        "_source": {
-          "id": 1569779976,
-          "title": "Unbranded Soft Hat",
-          "description": "Enim voluptatem qui fuga molestias eligendi odio unde soluta. Et perspiciatis omnis voluptatem commodi autem et voluptatem. Quia dolor atque molestias. Saepe et maxime eos fuga omnis consequatur dolor.",
-          "author": "Berta Muller",
-          "createdAt": "2024-03-02T15:56:35.7878301\u002B02:00"
-        }
-      },
-      {
-        "_index": "posts",
-        "_id": "452638918",
-        "_score": 1.0,
-        "_source": {
-          "id": 452638918,
-          "title": "Unbranded Frozen Chicken",
-          "description": "Doloremque qui quasi ratione totam sit. Dicta enim iusto. Adipisci mollitia dolorem sint explicabo. Facilis hic culpa molestiae sint pariatur fuga et.",
-          "author": "Brigitte Nader",
-          "createdAt": "2023-11-25T23:56:05.3011745\u002B02:00"
-        }
-      }
-    ]
+    "max_score": null,
+    "hits": []
   }
 }
