@@ -22,8 +22,8 @@ jobs:
       DOTNET_GENERATE_ASPNET_CERTIFICATE: false
       DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
       DOTNET_MULTILEVEL_LOOKUP: 0
-      PACKAGE_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer.Package\Nall.NEST.MigtarionAnalyzer.Package\
-      VSIX_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer\Nall.NEST.MigtarionAnalyzer.Vsix\
+      PACKAGE_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer.Package
+      VSIX_PROJECT: analyzer\Nall.NEST.MigtarionAnalyzer.Vsix
 
     steps:
     - uses: actions/checkout@v4.1.7
