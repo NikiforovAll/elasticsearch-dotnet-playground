@@ -1,8 +1,10 @@
 # Elasticsearch .NET Playground
 
-This playground is a collection of notebooks that demonstrate how to use Elasticsearch.NET and NEST clients.
+This playground is a collection of notebooks that demonstrate how to use `Elastic.Clients.Elasticsearch` and `NEST` clients.
 
-You may want to use this playground to learn more about Elasticsearch.NET and NEST clients or if you want to migration your existing code from NEST to Elasticsearch.NET.
+You may want to use this playground to:
+* Learn more about `Elastic.Clients.Elasticsearch` and `NEST` clients
+* You want to migrate your existing code from `NEST` to `Elastic.Clients.Elasticsearch`.
 
 > See [playground.ipynb](./playground.ipynb) to get started.
 
@@ -11,6 +13,14 @@ You may want to use this playground to learn more about Elasticsearch.NET and NE
 ## Configure
 
 To configure the playground, set the `PLAYGROUND_CONNECTION_STRING=https://elastic:elastic@127.0.0.1:9200/` in .env file in the root of the project. If you don't do it, you will be prompted to enter the connection string every time you set up the client
+
+## Analyzer
+
+This repository contains [Nall.NEST.MigtarionAnalyzer](https://github.com/NikiforovAll/elasticsearch-dotnet-playground/pkgs/nuget/Nall.NEST.MigtarionAnalyzer) analyzer that helps with migration from `Nest` to `Elastic.Clients.Elasticsearch`.
+
+```bash
+dotnet add package Nall.NEST.MigtarionAnalyzer --version 1.0.0
+```
 
 ## Devcontainer
 

@@ -51,7 +51,7 @@ jobs:
         msbuild /restore ${{ env.VSIX_PROJECT }} /p:Configuration=Release /p:OutDir=${{ github.workspace }}\artifacts
 
     - name: Push to GitHub Packages
-      run: nuget push ${{ github.workspace }}\artifacts\*.nupkg -Source "Github"
+      run: nuget push ${{ github.workspace }}\artifacts\*.nupkg -Source "Github" -SkipDuplicate
 
     # upload artifacts
     - name: Upload artifacts
