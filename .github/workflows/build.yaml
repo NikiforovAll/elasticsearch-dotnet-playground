@@ -39,8 +39,8 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2.0.0
 
-    - name: Add GPR Source
-      run: nuget sources Add -Name "GPR" -Source ${{ secrets.GPR_URI }} -UserName ${{ secrets.GPR_USERNAME }} -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Add NuGet Source
+      run: nuget sources Add -Name "Github" -Source https://nuget.pkg.github.com/nikiforovall/index.json -UserName nikiforovall -Password ${{secrets.GITHUB_TOKEN}}
 
     - name: Build NuGet Package
       run: |
@@ -51,7 +51,7 @@ jobs:
         msbuild /restore ${{ env.VSIX_PROJECT }} /p:Configuration=Release /p:OutDir=${{ github.workspace }}\artifacts
 
     - name: Push to GitHub Packages
-      run: nuget push ${{ github.workspace }}\artifacts\*.nupkg -Source "GPR"
+      run: nuget push ${{ github.workspace }}\artifacts\*.nupkg -Source "Github"
 
     # upload artifacts
     - name: Upload artifacts
