@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Nall.NEST.MigtarionAnalyzer" Version="1.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="NEST" Version="7.17.5" />
     <PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.15.6" />
   </ItemGroup>

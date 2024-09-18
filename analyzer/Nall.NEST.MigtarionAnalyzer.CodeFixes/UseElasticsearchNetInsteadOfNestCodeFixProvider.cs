@@ -62,10 +62,43 @@ namespace Nall.NEST.MigtarionAnalyzer
         )
         {
             var root = await document.GetSyntaxRootAsync(cancellationToken).ConfigureAwait(false);
-            var semanticModel = await document
-                .GetSemanticModelAsync(cancellationToken)
-                .ConfigureAwait(false);
 
+            root = ReplaceUsings(root);
+            root = ReplaceConnectionSettings(root);
+
+            var nodesToReplace = root.DescendantNodes()
+                .OfType<IdentifierNameSyntax>()
+                .Where(node =>
+                    node.Identifier.ValueText == "IElasticClient"
+                    || node.Identifier.ValueText == "ElasticClient"
+                );
+
+            root = root.ReplaceNodes(
+                nodesToReplace,
+                (node, _) =>
+                    SyntaxFactory.IdentifierName("ElasticsearchClient").WithTriviaFrom(node)
+            );
+
+            return document.WithSyntaxRoot(root);
+        }
+
+        private SyntaxNode ReplaceConnectionSettings(SyntaxNode root)
+        {
+            var nodesToReplace = root.DescendantNodes()
+                .OfType<IdentifierNameSyntax>()
+                .Where(node => node.Identifier.ValueText == "ConnectionSettings");
+
+            root = root.ReplaceNodes(
+                nodesToReplace,
+                (node, _) =>
+                    SyntaxFactory.IdentifierName("ElasticsearchClientSettings").WithTriviaFrom(node)
+            );
+
+            return root;
+        }
+
+        private static SyntaxNode ReplaceUsings(SyntaxNode root)
+        {
             // Replace the using directive
             var oldUsingDirective = root.DescendantNodes()
                 .OfType<UsingDirectiveSyntax>()
@@ -73,9 +106,9 @@ namespace Nall.NEST.MigtarionAnalyzer
 
             if (oldUsingDirective != null)
             {
-                var newUsingDirective = SyntaxFactory.UsingDirective(
-                    SyntaxFactory.ParseName("Elastic.Clients.Elasticsearch")
-                ).WithTriviaFrom(oldUsingDirective); // Preserve trivia
+                var newUsingDirective = SyntaxFactory
+                    .UsingDirective(SyntaxFactory.ParseName("Elastic.Clients.Elasticsearch"))
+                    .WithTriviaFrom(oldUsingDirective); // Preserve trivia
                 root = root.ReplaceNode(oldUsingDirective, newUsingDirective);
             }
             else
@@ -93,17 +126,7 @@ namespace Nall.NEST.MigtarionAnalyzer
                 }
             }
 
-            // Replace IElasticClient with ElasticsearchClient
-            var nodesToReplace = root.DescendantNodes()
-                .OfType<IdentifierNameSyntax>()
-                .Where(node => node.Identifier.ValueText == "IElasticClient");
-
-            root = root.ReplaceNodes(
-                nodesToReplace,
-                (node, _) => SyntaxFactory.IdentifierName("ElasticsearchClient").WithTriviaFrom(node) // Preserve trivia
-            );
-
-            return document.WithSyntaxRoot(root);
+            return root;
         }
     }
 }

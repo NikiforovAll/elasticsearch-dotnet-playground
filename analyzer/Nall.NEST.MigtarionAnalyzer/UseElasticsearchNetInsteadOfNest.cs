@@ -46,7 +46,9 @@ namespace Nall.NEST.MigtarionAnalyzer
         {
             var identifierNode = (IdentifierNameSyntax)context.Node;
 
-            if (identifierNode.Identifier.Text != "IElasticClient")
+            var indetifierText = identifierNode.Identifier.Text;
+
+            if (indetifierText != "IElasticClient" && indetifierText != "ElasticClient")
             {
                 return;
             }

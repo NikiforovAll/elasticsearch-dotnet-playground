@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <PackageId>Nall.NEST.MigtarionAnalyzer</PackageId>
-    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageVersion>1.1.0.0</PackageVersion>
     <Authors>Oleksii_Nikiforov</Authors>
     <PackageLicenseUrl>https://github.com/NikiforovAll/elasticsearch-dotnet-playground/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/NikiforovAll/elasticsearch-dotnet-playground</PackageProjectUrl>

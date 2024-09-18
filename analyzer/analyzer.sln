@@ -13,15 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nall.NEST.MigtarionAnalyzer.Vsix", "Nall.NEST.MigtarionAnalyzer.Vsix\Nall.NEST.MigtarionAnalyzer.Vsix.csproj", "{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5B3F3DB1-20B9-4834-83CC-17334839193B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,9 +39,8 @@ Global
 		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60AA48E2-2F4D-4CD9-9CCC-F4B9332B3865}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAF7F28D-995E-4FB8-BAE9-13C082C3BAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

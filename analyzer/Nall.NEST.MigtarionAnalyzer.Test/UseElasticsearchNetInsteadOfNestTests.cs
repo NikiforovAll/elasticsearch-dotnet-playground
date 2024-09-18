@@ -41,6 +41,35 @@ public class UseElasticsearchNetInsteadOfNestTests
         await VerifyCS.VerifyAnalyzerAsync(test, expected1, expected2);
     }
 
+    [TestMethod]
+    public async Task TestNestUsageAsClass()
+    {
+        var test =
+            @"
+                using Nest;
+                public class ElasticsearchService
+                {
+                    private readonly {|#0:ElasticClient|} _client;
+
+                    public ElasticsearchService({|#1:ElasticClient|} client)
+                    {
+                        _client = client;
+                    }
+                }";
+
+        var expected1 = VerifyCS
+            .Diagnostic("ELS001")
+            .WithLocation(0)
+            .WithArguments("ElasticClient");
+
+        var expected2 = VerifyCS
+            .Diagnostic("ELS001")
+            .WithLocation(1)
+            .WithArguments("ElasticClient");
+
+        await VerifyCS.VerifyAnalyzerAsync(test, expected1, expected2);
+    }
+
     //Diagnostic and CodeFix both triggered and checked for
     [TestMethod]
     public async Task TestCodeFix()
@@ -114,6 +143,52 @@ public class UseElasticsearchNetInsteadOfNestTests
 
         await VerifyCS.VerifyCodeFixAsync(test, [expected1, expected2], fixtest);
     }
+
+    [TestMethod]
+    public async Task TestCodeFixWithSettings()
+    {
+        var test = """
+            using Nest;
+
+            public class ElasticsearchService
+            {
+                private readonly {|#0:ElasticClient|} _client;
+
+                public ElasticsearchService()
+                {
+                    var settings = new ConnectionSettings(new Uri("https://elastic:elastic@127.0.0.1:9200/"));
+                    _client = new {|#1:ElasticClient|}(settings);
+                }
+            }
+            """;
+
+        var fixtest = """
+            using Elastic.Clients.Elasticsearch;
+
+            public class ElasticsearchService
+            {
+                private readonly ElasticsearchClient _client;
+
+                public ElasticsearchService()
+                {
+                    var settings = new ElasticsearchClientSettings(new Uri("https://elastic:elastic@127.0.0.1:9200/"));
+                    _client = new ElasticsearchClient(settings);
+                }
+            }
+            """;
+
+        var expected1 = VerifyCS
+            .Diagnostic("ELS001")
+            .WithLocation(0)
+            .WithArguments("ElasticClient");
+
+        var expected2 = VerifyCS
+            .Diagnostic("ELS001")
+            .WithLocation(1)
+            .WithArguments("ElasticClient");
+
+        await VerifyCS.VerifyCodeFixAsync(test, [expected1, expected2], fixtest);
+    }
 }
 
 public static class VerifyCS
@@ -149,7 +224,7 @@ public static class VerifyCS
         test.TestState.AdditionalReferences.Add(s_nestReference);
         test.TestState.AdditionalReferences.Add(s_elasticReference);
         test.ExpectedDiagnostics.AddRange(expected);
-        // we need this becaues of 
+        // we need this becaues of
         // error CS1705: Assembly 'Elastic.Clients.Elasticsearch' with identity 'Elastic.Clients.Elasticsearch, Version=8.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d' uses 'System.Runtime, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' which has a higher version than referenced assembly 'System.Runtime' with identity 'System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
         test.CompilerDiagnostics = CompilerDiagnostics.None;
         return test.RunAsync();
