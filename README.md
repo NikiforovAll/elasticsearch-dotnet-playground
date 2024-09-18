@@ -14,7 +14,7 @@ You may want to use this playground to:
 
 To configure the playground, set the `PLAYGROUND_CONNECTION_STRING=https://elastic:elastic@127.0.0.1:9200/` in .env file in the root of the project. If you don't do it, you will be prompted to enter the connection string every time you set up the client
 
-## Analyzer
+## Analyzer [![Build](https://github.com/NikiforovAll/elasticsearch-dotnet-playground/actions/workflows/build.yaml/badge.svg)](https://github.com/NikiforovAll/elasticsearch-dotnet-playground/actions/workflows/build.yaml)
 
 This repository contains [Nall.NEST.MigtarionAnalyzer](https://www.nuget.org/packages/Nall.NEST.MigtarionAnalyzer) analyzer that helps with migration from `Nest` to `Elastic.Clients.Elasticsearch`.
 

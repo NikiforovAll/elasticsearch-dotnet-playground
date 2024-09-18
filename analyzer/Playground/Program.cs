@@ -1,7 +1,6 @@
 ﻿#pragma warning disable CS8321 // Local function is declared but never used
 
 using System.Text.Json;
-using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
 using Nest;
 
@@ -28,8 +27,4 @@ static IElasticClient Create1(ConnectionSettings settings)
 static ElasticClient Create2(ConnectionSettings settings)
 {
     return new ElasticClient(settings);
-}
-static ElasticsearchClient Create3(ElasticsearchClientSettings settings)
-{
-    return new ElasticsearchClient(settings);
 }
