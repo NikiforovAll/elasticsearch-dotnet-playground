@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Nall.NEST.MigtarionAnalyzer.79afaeb1-a5b0-45cc-ac3a-33980131a010" Version="1.1" Language="en-US" Publisher="Oleksii_Nikiforov"/>
+    <Identity Id="Nall.NEST.MigtarionAnalyzer.79afaeb1-a5b0-45cc-ac3a-33980131a010" Version="1.2" Language="en-US" Publisher="Oleksii_Nikiforov"/>
     <DisplayName>Nall.NEST.MigtarionAnalyzer</DisplayName>
     <Description xml:space="preserve">This package helps with migration from Nest to Elastic.Clients.Elasticsearch.</Description>
   </Metadata>
