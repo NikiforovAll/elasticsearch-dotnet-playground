@@ -53,17 +53,17 @@ namespace Nall.NEST.MigtarionAnalyzer
                 return;
             }
 
-            //var symbolInfo = context.SemanticModel.GetSymbolInfo(identifierNode);
-            //if (symbolInfo.Symbol == null)
-            //{
-            //    return;
-            //}
-            //
-            //var containingNamespace = symbolInfo.Symbol.ContainingNamespace;
-            //if (containingNamespace == null || containingNamespace.ToString() != "Nest")
-            //{
-            //    return;
-            //}
+            var symbolInfo = context.SemanticModel.GetSymbolInfo(identifierNode);
+            if (symbolInfo.Symbol == null)
+            {
+                return;
+            }
+
+            var containingNamespace = symbolInfo.Symbol.ContainingNamespace;
+            if (containingNamespace == null || containingNamespace.ToString() != "Nest")
+            {
+                return;
+            }
 
             var diagnostic = Diagnostic.Create(s_rule, identifierNode.GetLocation());
             context.ReportDiagnostic(diagnostic);

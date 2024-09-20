@@ -189,6 +189,26 @@ public class UseElasticsearchNetInsteadOfNestTests
 
         await VerifyCS.VerifyCodeFixAsync(test, [expected1, expected2], fixtest);
     }
+
+    [TestMethod]
+    public async Task SameNameButNotFromNamespaceShouldNotAddDiagnostic()
+    {
+        var test = """
+            public class ElasticClient
+            {
+            }
+            public class IElasticClient
+            {
+            }
+
+            public class MyService{
+                private readonly ElasticClient _client1;
+                private readonly IElasticClient _client2;
+            }
+            """;
+
+        await VerifyCS.VerifyAnalyzerAsync(test, []);
+    }
 }
 
 public static class VerifyCS
