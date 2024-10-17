@@ -6,7 +6,7 @@ You may want to use this playground to:
 * Learn more about `Elastic.Clients.Elasticsearch` and `NEST` clients
 * You want to migrate your existing code from `NEST` to `Elastic.Clients.Elasticsearch`.
 
-> See [playground.ipynb](./playground.ipynb) to get started.
+> See [playground.ipynb](./src/nest-vs-elasticsearch/playground.ipynb) to get started.
 
 ![setup-elastic-infra](./assets/setup-elastic-infra.png)
 
@@ -48,3 +48,5 @@ jupyter-lab
 * NEST + Elasticsearch.NET in one doc - <https://www.elastic.co/guide/en/elasticsearch/client/net-api/7.17/introduction.html>
 * .NET Interactive | Samples - <https://github.com/dotnet/interactive/tree/main/samples/notebooks/csharp>
 * .NET Interactive - <https://github.com/dotnet/interactive/blob/main/docs/README.md>
+* Elasticsearch Labs <https://github.com/elastic/elasticsearch-labs>
+* <https://www.elastic.co/start-local>
