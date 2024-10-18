@@ -2,7 +2,7 @@ using System.Text.Json;
 using System.IO;
 using Elastic.Clients.Elasticsearch;
 using Elastic.Transport.Products.Elasticsearch;
-
+using System.Text.Json.Nodes;
 
 static object DumpGetRequest(ElasticsearchResponse response)
 {
@@ -28,7 +28,7 @@ static object TryParsePayload(string payload)
 
 static string ToJson(object paylod)
 {
-    return prettyJson(System.Text.Json.JsonSerializer.Serialize(paylod));
+    return Indent(prettyJson(System.Text.Json.JsonSerializer.Serialize(paylod)));
 
     static string prettyJson(string json)
     {
@@ -45,6 +45,16 @@ static string ToJson(object paylod)
             return json;
         }
     }
+}
+
+static string Indent(string json)
+{
+    json = JsonNode.Parse(json).ToJsonString(new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        // Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    });
+    return json;
 }
 
 static string GetRequestFromDebugInformation(string paylod)

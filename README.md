@@ -50,3 +50,5 @@ jupyter-lab
 * .NET Interactive - <https://github.com/dotnet/interactive/blob/main/docs/README.md>
 * Elasticsearch Labs <https://github.com/elastic/elasticsearch-labs>
 * <https://www.elastic.co/start-local>
+* <https://devblogs.microsoft.com/dotnet/introducing-microsoft-extensions-ai-preview/>
+* <https://www.galileo.ai/blog/mastering-rag-how-to-select-an-embedding-model>
