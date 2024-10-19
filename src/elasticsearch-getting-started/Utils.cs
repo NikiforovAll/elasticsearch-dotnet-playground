@@ -4,14 +4,30 @@ using Elastic.Clients.Elasticsearch;
 using Elastic.Transport.Products.Elasticsearch;
 using System.Text.Json.Nodes;
 
-static object DumpGetRequest(ElasticsearchResponse response)
+
+static void Dump(ElasticsearchResponse response)
 {
-    return DumpGetRequest(response.DebugInformation);
+    response.DebugInformation.DisplayAs("application/json");
 }
 
-static object DumpGetRequest(string debugInformation) 
+static void DumpResponse(ElasticsearchResponse response)
 {
-    return TryParsePayload(GetRequestFromDebugInformation(debugInformation));
+    ToJson(Response(response)).DisplayAs("application/json");
+}
+
+static object Response(ElasticsearchResponse response)
+{
+    return TryParsePayload(GetResponseFromDebugInformation(response.DebugInformation));
+}
+
+static void DumpRequest(ElasticsearchResponse response)
+{
+    ToJson(Request(response)).DisplayAs("application/json");
+}
+
+static object Request(ElasticsearchResponse response) 
+{
+    return TryParsePayload(GetRequestFromDebugInformation(response.DebugInformation));
 }
 
 static object TryParsePayload(string payload)
